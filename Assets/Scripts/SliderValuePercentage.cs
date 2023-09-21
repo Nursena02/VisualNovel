@@ -7,12 +7,15 @@ using TMPro;
 public class SliderValuePercentage : MonoBehaviour
 {
     public Slider slider;
-    public TMP_Text percentageText; 
+    public TMP_Text percentageText;
 
     void Update()
     {
         float percentage = GetSliderValuePercentage();
-        percentageText.text = percentage.ToString("F1") + "%"; 
+        percentageText.text = percentage.ToString("F1") + "%";
+
+        // Debug.LogError kullanýmý örneði:
+        Debug.LogError("Hata mesajý burada!");
     }
 
     public float GetSliderValuePercentage()
@@ -22,5 +25,12 @@ public class SliderValuePercentage : MonoBehaviour
         return percentage;
     }
 }
+
+
+
+
+
+
+
 
 
