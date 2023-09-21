@@ -11,11 +11,8 @@ public class SliderValuePercentage : MonoBehaviour
 
     void Update()
     {
-        float percentage = GetSliderValuePercentage();
-        percentageText.text = percentage.ToString("F1") + "%";
-
-        // Debug.LogError kullanýmý örneði:
-        Debug.LogError("Hata mesajý burada!");
+        int volume = Mathf.RoundToInt(GetSliderValuePercentage()); // Deðeri tam sayýya yuvarla
+        percentageText.text = volume.ToString() + "%";
     }
 
     public float GetSliderValuePercentage()
@@ -25,12 +22,6 @@ public class SliderValuePercentage : MonoBehaviour
         return percentage;
     }
 }
-
-
-
-
-
-
 
 
 
