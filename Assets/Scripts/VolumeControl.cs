@@ -15,7 +15,7 @@ public class VolumeControl : MonoBehaviour
         volumeSlider.onValueChanged.AddListener(ChangeVolume);
     }
 
-    private void ChangeVolume(int newVolume)
+    private void ChangeVolume(float newVolume)
     {
         audioSource.volume = newVolume;
     }

@@ -22,7 +22,7 @@ public class VolumeSlider : MonoBehaviour
         }
     }
 
-    private void ChangeGlobalVolume(int newVolume)
+    private void ChangeGlobalVolume(float newVolume)
     {
         AudioManager audioManager = AudioManager.GetInstance();
 
