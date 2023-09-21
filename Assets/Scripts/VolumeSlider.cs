@@ -13,8 +13,9 @@ public class VolumeSlider : MonoBehaviour
 
         if (audioManager != null)
         {
-            volumeSlider.value = audioManager.globalVolume;
-            volumeSlider.onValueChanged.AddListener(ChangeGlobalVolume);
+            volumeSlider.value = Mathf.RoundToInt(audioManager.globalVolume); // Global ses düzeyini tam sayýya yuvarla
+            // onValueChanged dinleyicisini UpdateGlobalVolume metoduna baðla
+            volumeSlider.onValueChanged.AddListener(UpdateGlobalVolume);
         }
         else
         {
@@ -22,15 +23,22 @@ public class VolumeSlider : MonoBehaviour
         }
     }
 
-    private void ChangeGlobalVolume(float newVolume)
+    private void UpdateGlobalVolume(float newVolume)
     {
         AudioManager audioManager = AudioManager.GetInstance();
 
         if (audioManager != null)
         {
-            audioManager.globalVolume = newVolume;
+            audioManager.globalVolume = Mathf.RoundToInt(newVolume); // Yeni global ses düzeyini tam sayýya yuvarla
         }
     }
 }
+
+
+
+
+
+
+
 
 

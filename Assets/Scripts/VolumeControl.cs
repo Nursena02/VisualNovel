@@ -10,13 +10,14 @@ public class VolumeControl : MonoBehaviour
 
     private void Start()
     {
-        volumeSlider.value = audioSource.volume;
+        volumeSlider.value = Mathf.RoundToInt(audioSource.volume); // Ses düzeyini tam sayýya yuvarla
 
-        volumeSlider.onValueChanged.AddListener(ChangeVolume);
+        // onValueChanged dinleyicisini UpdateVolume metoduna baðla
+        volumeSlider.onValueChanged.AddListener(UpdateVolume);
     }
 
-    private void ChangeVolume(float newVolume)
+    private void UpdateVolume(float newVolume)
     {
-        audioSource.volume = newVolume;
+        audioSource.volume = Mathf.RoundToInt(newVolume); // Yeni ses düzeyini tam sayýya yuvarla
     }
 }
